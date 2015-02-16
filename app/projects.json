@@ -1,0 +1,5 @@
+[
+  {"title": "Weird project name one", "slug": "PROJ-1", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis nisi nec tellus condimentum laoreet mollis sit amet quam. Maecenas vitae vehicula dolor."},
+  {"title": "Very random second projects", "slug": "PROJ-2", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis nisi nec tellus condimentum laoreet mollis sit amet quam. Maecenas vitae vehicula dolor."},
+  {"title": "Too lazy to find names", "slug": "PROJ-3", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis nisi nec tellus condimentum laoreet mollis sit amet quam. Maecenas vitae vehicula dolor."}
+]
