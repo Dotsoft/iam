@@ -1,0 +1,12 @@
+[
+  {"text": "5 minutes", "minutes": "5m"},
+  {"text": "10 minutes", "minutes": "10m"},
+  {"text": "15 minutes", "minutes": "15m"},
+  {"text": "30 minutes", "minutes": "30m"},
+  {"text": "45 minutes", "minutes": "45m"},
+  {"text": "1 hour 5 minutes", "minutes": "65m"},
+  {"text": "1 hour 10 minutes", "minutes": "70m"},
+  {"text": "1 hour 15 minutes", "minutes": "75m"},
+  {"text": "1 hour 30 minutes", "minutes": "90m"},
+  {"text": "1 hour 45 minutes", "minutes": "135m"}
+]
