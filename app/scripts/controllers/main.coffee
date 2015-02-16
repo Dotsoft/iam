@@ -8,7 +8,10 @@
  # Controller of the iamApp
 ###
 angular.module('iamApp')
-  .controller 'MainCtrl', ($scope, $http, $q, $timeout) ->
+  .controller 'MainCtrl', ($scope, $http, $q, $timeout, Entries) ->
+    Entries.getAll().then (response) ->
+      $scope.entries = response.data
+
     $scope.searchProjects = (term) ->
       projList = []
       return $http.get('projects.json').then (response) ->
