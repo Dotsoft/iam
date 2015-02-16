@@ -21,3 +21,11 @@
   mentio-template-url="views/people-mentions.tpl"
   mentio-search="searchPeople(term)"
   mentio-select="getPeopleTextRaw(item)"></mentio-menu>
+
+<mentio-menu
+  mentio-for="'theText'"
+  mentio-trigger-char="'+'"
+  mentio-items="minutes"
+  mentio-template-url="views/minute-mentions.tpl"
+  mentio-search="searchMinutes(term)"
+  mentio-select="getMinuteTextRaw(item)"></mentio-menu>

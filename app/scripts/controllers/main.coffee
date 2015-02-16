@@ -45,3 +45,19 @@ angular.module('iamApp')
 
     $scope.getPeopleTextRaw = (item) ->
       return '@' + item.username
+
+    $scope.searchMinutes = (term) ->
+      minuteList = []
+      return $http.get('minutes.json').then (response) ->
+        angular.forEach response.data, (item) ->
+          if item.text.toUpperCase().replace(' ', '').indexOf(term.toUpperCase()) >= 0
+            minuteList.push item
+          return
+        $scope.minutes = minuteList
+        $q.when minuteList
+
+    $scope.getMinuteText = (item) ->
+      return '+<strong>' + (item.username) + '</strong>'
+
+    $scope.getMinuteTextRaw = (item) ->
+      return '+' + item.minutes
