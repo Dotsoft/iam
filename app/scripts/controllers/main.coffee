@@ -12,6 +12,15 @@ angular.module('iamApp')
     Entries.getAll().then (response) ->
       $scope.entries = response.data
 
+    $scope.addEntry = (text) =>
+      return if angular.element("mentio-menu:visible").length > 0
+      matchesFix = (arr) -> arr[k] = v.substr(1) for k, v of arr
+      $scope.entries.push
+        description: text
+        projects: matchesFix text.match(/(?:\#)(\w+)/g)
+        people: matchesFix text.match(/(?:\@)(\w+)/g)
+        minutes: matchesFix text.match(/(?:\+)(\w+)/g)
+
     $scope.searchProjects = (term) ->
       projList = []
       return $http.get('projects.json').then (response) ->
