@@ -22,3 +22,7 @@ body {
     border-bottom: 0;
   }
 }
+
+.active .text-primary {
+  color: #FFFFFF;
+}
