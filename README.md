@@ -20,3 +20,12 @@ A simple `npm install -g yo angular-generator grunt-cli bower` should set everyt
 
 Running `grunt serve` will start a web server accessible on `http://localhost:9000`.  
 That should be enough for now as nothing else really works.
+
+## Building
+
+To make the application into an executable you will need to build it and package it.  
+Building the application using `grunt build` will create a `./dist` folder with
+everything you need.  
+After that running `grunt nodewebkit` will take the built and package it nicely
+into windows and osx applications inside the `./builds` folder.  
+*The first time this might take a while as it will need to download the `nw.js` binaries.*
