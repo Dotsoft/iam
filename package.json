@@ -1,13 +1,13 @@
 {
   "name": "iam",
   "version": "0.0.0",
-  "main": "app://iam/index.html",
+  "main": "app://iam/loader.html",
   "window": {
     "title": "IAM",
     "icon": "link.png",
     "toolbar": false,
     "frame": false,
-    "always-on-top": true,
+    "always-on-top": false,
     "transparent": true,
     "no-edit-menu": true,
     "single-instance": true,
