@@ -21,7 +21,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div id="nw" class="container">
       <!-- <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
@@ -69,5 +69,10 @@
         <script src="scripts/services/entries.js"></script>
         <script src="scripts/directives/ngenter.js"></script>
         <!-- endbuild -->
+
+    <script>
+      var gui = require('nw.gui');
+      var win = gui.Window.get();
+    </script>
 </body>
 </html>
