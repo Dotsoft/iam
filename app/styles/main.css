@@ -5,6 +5,13 @@ body {
   padding-bottom: 20px;
 }
 
+#nw {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
