@@ -1,5 +1,6 @@
 /* Space out content a bit */
 body {
+  background-color: transparent;
   padding-top: 20px;
   padding-bottom: 20px;
 }
