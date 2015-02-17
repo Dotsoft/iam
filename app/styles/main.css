@@ -26,3 +26,15 @@ body {
 .active .text-primary {
   color: #FFFFFF;
 }
+
+.invalid {
+  border-color: maroon !important;
+  color: maroon !important;
+  outline-color: maroon !important;
+}
+
+input {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}

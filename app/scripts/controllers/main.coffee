@@ -12,14 +12,33 @@ angular.module('iamApp')
     Entries.getAll().then (response) ->
       $scope.entries = response.data
 
-    $scope.addEntry = (text) =>
-      return if angular.element("mentio-menu:visible").length > 0
+    matchEntry = (text = "") ->
       matchesFix = (arr) -> arr[k] = v.substr(1) for k, v of arr
-      $scope.entries.push
+      return {
         description: text
         projects: matchesFix text.match(/(?:\#)(\w+)/g)
         people: matchesFix text.match(/(?:\@)(\w+)/g)
         minutes: matchesFix text.match(/(?:\+)(\w+)/g)
+      }
+
+    $scope.checkEntry = (text) =>
+      entry = matchEntry(text)
+      missing = []
+      missing.push "project code" if entry.projects.length is 0
+      missing.push "time code" if entry.minutes.length is 0
+      if missing.length isnt 0
+        $scope.valid = false
+        $scope.message = "Missing #{missing.join(', ')}."
+      else
+        $scope.valid = true
+        $scope.message = ""
+
+    $scope.checkEntry()
+
+    $scope.addEntry = (text) =>
+      return if angular.element("mentio-menu:visible").length > 0
+      return if $scope.valid is false
+      $scope.entries.push matchEntry(text)
 
     $scope.searchProjects = (term) ->
       projList = []

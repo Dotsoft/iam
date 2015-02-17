@@ -5,7 +5,10 @@
   class="form-control"
   ng-trim="false"
   size="100"
-  ng-enter="addEntry(theText)"/>
+  ng-enter="addEntry(theText)"
+  ng-keyup="checkEntry(theText)"
+  ng-class="{invalid: !valid}"
+  />
 
 <mentio-menu
   mentio-for="'theText'"
@@ -30,6 +33,10 @@
   mentio-template-url="views/minute-mentions.tpl"
   mentio-search="searchMinutes(term)"
   mentio-select="getMinuteTextRaw(item)"></mentio-menu>
+
+<div class="message" ng-class="{invalid: !valid}">{{message}}</div>
+
+<br />
 
 <ul class="list-group">
   <entry ng-repeat="entry in entries" />
