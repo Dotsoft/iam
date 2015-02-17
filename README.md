@@ -2,16 +2,28 @@
 
 Proof of concept time/task tracking UI.
 
-## Idea
+## Usage
 
-There are currently three things each entry is interested in and that can auto complete.
+Currently the application is as simple as it gets.  
+You are presented with a textbox where you can right what you have been up to.
+*We'll call this an entry.*  
+While writing your entry you can select **projects**, **people** and add **times**
+of how long this action required.  
 
  * **#**project  
-   Project currently working on. `#proj-1`, `#proj-2`, etc
+   Project related to the entry, starts with a hash (#). `#proj-1`, `#proj-2`, etc
  * **@**username  
-   Friend or foe you wanna tag. `@geoah`, `@stek`, etc
+   Friend or foe you wanna tag, starts with an at sign (@). `@geoah`, `@stek`, etc
  * **+**time  
-   How long has it been since? `+1h15m`, `+45min`, etc
+   How long it took you, starts with a plus sign (+). `+1h15m`, `+45min`, etc
+
+### Desktop Application
+
+The desktop application will not show initially a user interface.  
+The user interface can be toggled by the global hotkey `Alt+Shift+A`.
+*Note: There is currently an issue with `nw.js` that does not allow to blur the
+application so hitting escape or pressing again the global hotkey will hide the
+window but will not re-focus the previously focused window.*
 
 ## Development
 
