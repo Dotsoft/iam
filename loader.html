@@ -1,0 +1,87 @@
+<script>
+  var active = false;
+  var new_win;
+  // Load native UI library.
+  var gui = require('nw.gui');
+
+  // Get the current window
+  var win = gui.Window.get();
+
+  var option = {
+    key : "Alt+Shift+A",
+    active : function() {
+      // New window options
+      var new_win_option = {
+        "title": "IAM",
+        "toolbar": false,
+        "frame": false,
+        "always-on-top": true,
+        "transparent": true,
+        "no-edit-menu": true,
+        "single-instance": true,
+        "show": true,
+        "node-remote": "*",
+        "width": 800,
+        "height": 500,
+        "position": "center",
+        "min_width": 400,
+        "min_height": 200,
+        "max_width": 800,
+        "max_height": 600
+      };
+
+      if (new_win) {
+        new_win.close();
+        new_win = false;
+      } else {
+        new_win = gui.Window.open('/index.html', new_win_option);
+        new_win.on('loaded', function () {
+          // new_win.show();
+          new_win.focus();
+        });
+      }
+
+      // And listen to new window's blur event
+      // new_win.on('blur', function() {
+      //   new_win.close();
+      // });
+
+      // focused = !focused;
+      // if (focused) {
+      //   win.show();
+      //   win.focus();
+      // } else {
+      //   win.blur();
+      //   win.hide();
+      // }
+    },
+    failed : function(msg) {
+      console.log(msg);
+    }
+  };
+
+  win.hide();
+  win.blur();
+
+  // Create a shortcut with |option|.
+  var shortcut = new gui.Shortcut(option);
+
+  // Register global desktop shortcut, which can work without focus.
+  gui.App.registerGlobalHotKey(shortcut);
+
+  // You can also add listener to shortcut's active and failed event.
+  // shortcut.on('active', function() {
+  //   win.show();
+  //   win.focus();
+  //   console.log("Global desktop keyboard shortcut: " + this.key + " active.");
+  // });
+  //
+  // shortcut.on('failed', function(msg) {
+  //   console.log(msg);
+  // });
+
+  win.blur();
+
+  // Unregister the global desktop shortcut.
+  // gui.App.unregisterGlobalHotKey(shortcut);
+</script>

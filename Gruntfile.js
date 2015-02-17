@@ -336,7 +336,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: './',
           dest: '<%= yeoman.dist %>',
-          src: ['package.json']
+          src: ['package.json', 'loader.html']
         }, {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
