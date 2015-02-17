@@ -1,6 +1,26 @@
 {
   "name": "iam",
   "version": "0.0.0",
+  "main": "app://iam/index.html",
+  "window": {
+    "title": "IAM",
+    "icon": "link.png",
+    "toolbar": false,
+    "frame": false,
+    "always-on-top": true,
+    "transparent": true,
+    "no-edit-menu": true,
+    "single-instance": true,
+    "show": false,
+    "node-remote": "*",
+    "width": 800,
+    "height": 500,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 800,
+    "max_height": 600
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.1",
