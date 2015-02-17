@@ -5,9 +5,9 @@
   class="form-control"
   ng-trim="false"
   size="100"
-  ng-enter="addEntry(theText)"
-  ng-keyup="checkEntry(theText)"
+  ng-keyup="checkEntry(theText, $event)"
   ng-class="{invalid: !valid}"
+  autofocus
   />
 
 <mentio-menu

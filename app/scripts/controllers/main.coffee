@@ -8,7 +8,7 @@
  # Controller of the iamApp
 ###
 angular.module('iamApp')
-  .controller 'MainCtrl', ($scope, $http, $q, $timeout, Entries) ->
+  .controller 'MainCtrl', ($scope, $http, $q, $timeout, $window, Entries) ->
     Entries.getAll().then (response) ->
       $scope.entries = response.data
 
@@ -21,7 +21,16 @@ angular.module('iamApp')
         minutes: matchesFix text.match(/(?:\+)(\w+)/g)
       }
 
-    $scope.checkEntry = (text) =>
+    $scope.checkEntry = (text, event) =>
+      if event?.which is 27 and $window?.win?
+        $window.win.blur()
+        $window.win.close()
+        $window.win = false
+        return
+      else if event?.which is 13 and angular.element("mentio-menu:visible").length is 0 and $scope.valid is true
+        $scope.entries.push matchEntry(text)
+        $scope.theText = ""
+        return
       entry = matchEntry(text)
       missing = []
       missing.push "project code" if entry.projects.length is 0
@@ -35,10 +44,11 @@ angular.module('iamApp')
 
     $scope.checkEntry()
 
-    $scope.addEntry = (text) =>
-      return if angular.element("mentio-menu:visible").length > 0
-      return if $scope.valid is false
-      $scope.entries.push matchEntry(text)
+    # $scope.addEntry = (text) =>
+    #   return if angular.element("mentio-menu:visible").length > 0
+    #   return if $scope.valid is false
+    #   $scope.entries.push matchEntry(text)
+    #   $scope.theText = ""
 
     $scope.searchProjects = (term) ->
       projList = []
